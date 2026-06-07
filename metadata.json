@@ -1,0 +1,6 @@
+{
+  "name": "Round-Up Reading & Vocabulary",
+  "description": "8-11 yoshli bolalar uchun ingliz tili 'Round-Up' darsligi asosida reading va yangi so'zlarni mashq qilish tizimi. A4 formatda chop etish va moslashtirilgan o'quv materiallari generatoriga ega.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

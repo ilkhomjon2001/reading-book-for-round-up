@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Lexend:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Fredoka", ui-sans-serif, system-ui, sans-serif;
+  --font-reading: "Lexend", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom background animations & children theme colors */
+body {
+  background-color: #fdfcf0;
+  color: #334155;
+  font-family: var(--font-sans);
+  background-image: 
+    radial-gradient(circle at 80% 20%, rgba(186, 230, 253, 0.5) 0%, transparent 45%),
+    radial-gradient(circle at 20% 80%, rgba(254, 240, 138, 0.5) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* Custom glassmorphism styles */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Custom styles for matching words lines or playful buttons */
+.kid-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.45) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+}
+.kid-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -12px rgba(14, 165, 233, 0.25);
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(56, 189, 248, 0.8) !important;
+}
+
+/* Print simulation on screen (A4 aspect-ratio sheet style) */
+.a4-sheet-preview {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 18mm;
+  margin: 0 auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  box-sizing: border-box;
+}
+
+/* Custom styling for print media */
+@media print {
+  body {
+    background: white !important;
+    background-image: none !important;
+    color: black !important;
+    font-size: 11pt !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .a4-sheet-preview {
+    width: 100% !important;
+    min-height: 100% !important;
+    padding: 0mm !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Force background colors and borders in PDF/print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
